@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Post list view</title>
+
+        <meta name="description" content="Example HTML file">
+        <meta name="author" content="Pham Quoc Trung">
+        <style type="text/css">
+        /*
+          p {
+                color: #af2929;
+                font-size: 1.5em;
+            }
+            #myParagraph, button {
+                background: rgba(117, 195, 102, 1.0);
+            }
+        */
+        </style>
+    </head>
+    <body>
+        <!-- Loop through all posts and display the title, author and published
+            date.
+            See more: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#for-empty
+        -->
+        {% for post in posts %}
+            <p> <a href=""> {{ post.title }} </a> </p>
+            <p> {{ post.auth }} ({{ post.published_date }})</p>
+
+        {# If there is no post, display the following text #}
+        {% empty %}
+
+            <p> Nothing found. Please create some posts first. </p>
+
+        {% endfor %}
+
+    </body>
+</html>
